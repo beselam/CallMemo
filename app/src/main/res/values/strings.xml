@@ -2,4 +2,6 @@
     <string name="app_name">callmemo</string>
     <string name="n">note</string>
     <string name="note">note</string>
+    <string name="content">enter your content</string>
+    <string name="tyitle">enter a title or name</string>
 </resources>
