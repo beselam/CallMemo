@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     ListView coontentList;
     SQLiteDatabase db;
-   
+
     Cursor cursor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
