@@ -28,7 +28,8 @@
         </receiver>
 
         <activity android:name=".Userlogin" />
-        <activity android:name=".about"></activity>
+        <activity android:name=".about" />
+        <activity android:name=".Feedback"></activity>
     </application>
 
 </manifest>
