@@ -27,7 +27,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Userlogin"></activity>
+        <activity android:name=".Userlogin" />
+        <activity android:name=".about"></activity>
     </application>
 
 </manifest>
