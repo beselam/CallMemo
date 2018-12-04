@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserNote"></activity>
+        <activity android:name=".UserNote" />
+        <activity android:name=".Displayer"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 </manifest>

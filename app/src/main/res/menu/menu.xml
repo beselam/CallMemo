@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/savemanu"
-        android:icon="@drawable/save"
+        android:icon="@android:drawable/stat_sys_download"
         android:title="@string/note"
         app:showAsAction="always"
         tools:title="@string/note"></item>

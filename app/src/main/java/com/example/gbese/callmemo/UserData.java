@@ -2,6 +2,7 @@ package com.example.gbese.callmemo;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -42,4 +43,39 @@ public class UserData extends SQLiteOpenHelper {
         return true;
 
     }
+
+    public Cursor getListContent(int ListId){
+        SQLiteDatabase db = this.getWritableDatabase();
+      Cursor cuursor = db.query("MMEMO",
+                new String[]{"_id","TITLE", "CONTENT"}, "_id = ?", new String[]{Integer.toString(ListId)}
+                , null, null, null);
+        return cuursor;
+
+    }
+    public boolean UpdateData(String itemtitle,String itemcontent ,int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("TITLE",itemtitle);
+        contentValues.put("CONTENT", itemcontent);
+        db.update("MMEMO",contentValues,
+                "_id = ?",
+                new String[]{Integer.toString(id)});
+
+
+        return true;
+
+    }
+    public boolean DelateData(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete("MMEMO",
+                "_id = ?",
+                new String[]{Integer.toString(id)});
+
+
+        return true;
+
+    }
+
 }

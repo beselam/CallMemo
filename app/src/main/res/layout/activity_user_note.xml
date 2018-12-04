@@ -7,7 +7,7 @@
     tools:context=".UserNote">
 
     <EditText
-        android:id="@+id/titleu"
+        android:id="@+id/displaytitle"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -20,13 +20,13 @@
         android:ems="10"
         android:hint="@string/TITLE"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/contentu"
+        app:layout_constraintBottom_toTopOf="@+id/displaycontent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/contentu"
+        android:id="@+id/displaycontent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -43,6 +43,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleu"
+        app:layout_constraintTop_toBottomOf="@+id/displaytitle"
         app:layout_constraintVertical_bias="0.032" />
 </android.support.constraint.ConstraintLayout>

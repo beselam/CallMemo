@@ -5,13 +5,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
+
+import static android.nfc.NfcAdapter.EXTRA_ID;
 
 public class MainActivity extends AppCompatActivity {
     ListView coontentList;
@@ -48,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
+        AdapterView.OnItemClickListener itemClickListener= new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this,Displayer.class);
+                intent.putExtra(EXTRA_ID, (int) id);
+                startActivity(intent);
+            }
+
+        };
+        coontentList.setOnItemClickListener(itemClickListener);
 
     }
 
@@ -60,11 +75,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.noteitem:
-                Intent intent= new Intent(this,UserNote.class);
-                startActivity(intent);
+        if (item.getItemId()==R.id.noteitem) {
+
+            Intent intent = new Intent(this, UserNote.class);
+            startActivity(intent);
+        }
+      else if (item.getItemId()==R.id.callitem) {
+
+                Intent iintent = new Intent(Intent.ACTION_DIAL);
+                iintent.setData(Uri.parse("tel:"));
+                startActivity(iintent);
+
         }
         return true;
+    }
+
+    public void nextacti(View view) {
+        Intent intent= new Intent(this,UserNote.class);
+        startActivity(intent);
     }
 }

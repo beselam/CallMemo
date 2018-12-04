@@ -1,6 +1,5 @@
 package com.example.gbese.callmemo;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,8 +15,8 @@ public class UserNote extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_note);
-        title1 = (EditText) findViewById(R.id.titleu);
-        content1 = (EditText) findViewById(R.id.contentu);
+        title1 = (EditText) findViewById(R.id.displaytitle);
+        content1 = (EditText) findViewById(R.id.displaycontent);
         data = new UserData(this);
 
     }
@@ -27,12 +26,7 @@ public class UserNote extends AppCompatActivity {
         title = title1.getText().toString();
         content = content1.getText().toString();
 
-        if (title.isEmpty()) {
 
-            Toast.makeText(getApplicationContext(), "Please Enter a Title", Toast.LENGTH_LONG).show();
-        } else if (content.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Please Enter a content", Toast.LENGTH_LONG).show();
-        } else {
 
             boolean isinserted = data.addData(title, content);
             if (isinserted == true) {
@@ -42,8 +36,8 @@ public class UserNote extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Data not saved", Toast.LENGTH_LONG).show();
             }
-        }
 
+        finish();
     }
 
     @Override
@@ -58,10 +52,22 @@ public class UserNote extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.savemanu:
-                addData();
+                String title;
+                String content;
+                title = title1.getText().toString();
+                content = content1.getText().toString();
+                if (title.isEmpty()) {
+
+                    Toast.makeText(getApplicationContext(), "Please Enter a Title", Toast.LENGTH_LONG).show();
+                } else if (content.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please Enter a content", Toast.LENGTH_LONG).show();
+                } else {
+                    addData();
+                }
+
         }
 
-        finish();
+
 
         return true;
     }
