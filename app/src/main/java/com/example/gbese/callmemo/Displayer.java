@@ -80,5 +80,6 @@ public class Displayer extends AppCompatActivity {
 
       finish();
         return true;
+
     }
 }
