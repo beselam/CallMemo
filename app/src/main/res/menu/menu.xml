@@ -9,4 +9,14 @@
         app:showAsAction="always"
         tools:title="@string/note"></item>
 
+
+    <item
+        android:id="@+id/saemanu"
+        android:icon="@drawable/ss"
+        android:title="@string/note"
+        app:showAsAction="always"
+        tools:title="@string/note"></item>
+
+
+
 </menu>
