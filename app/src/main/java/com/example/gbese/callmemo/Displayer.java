@@ -65,8 +65,8 @@ public class Displayer extends AppCompatActivity {
 
             int ListId2 = (Integer) getIntent().getExtras().get(EXTRA_ID);
             SQLiteOpenHelper daata = new UserData(this);
-            ((UserData) daata).DelateData(ListId2);
-            boolean deleteddata = ((UserData) daata).DelateData(ListId2);
+            ((UserData) daata).DeleteData(ListId2);
+            boolean deleteddata = ((UserData) daata).DeleteData(ListId2);
             if(deleteddata){
                 Toast.makeText(getApplicationContext(), "Memo is Deleted :)", Toast.LENGTH_LONG).show();
             }
@@ -78,7 +78,7 @@ public class Displayer extends AppCompatActivity {
 
 
 
-      finish();
+       finish();
         return true;
 
     }
